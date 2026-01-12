@@ -1,0 +1,13 @@
+### Event Registration Endpoints
+
+### Register for an event (Protected - requires JWT token)
+POST http://localhost:8080/events/1/register
+Authorization: YOUR_JWT_TOKEN_HERE
+
+###
+
+### Cancel registration for an event (Protected - requires JWT token)
+DELETE http://localhost:8080/events/1/register
+Authorization: YOUR_JWT_TOKEN_HERE
+
+###

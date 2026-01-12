@@ -1,2 +1,4 @@
 api.db
 *.db
+booking-api
+go-booking-rest-api

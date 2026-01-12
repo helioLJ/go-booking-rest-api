@@ -1,0 +1,45 @@
+### Event Endpoints
+
+### Get all events (Public)
+GET http://localhost:8080/events
+
+###
+
+### Get a single event (Public)
+GET http://localhost:8080/events/1
+
+###
+
+### Create a new event (Protected - requires JWT token)
+POST http://localhost:8080/events
+Content-Type: application/json
+Authorization: YOUR_JWT_TOKEN_HERE
+
+{
+  "name": "Go Conference 2024",
+  "description": "Annual Go programming conference",
+  "location": "San Francisco, CA",
+  "dateTime": "2024-09-15T09:00:00Z"
+}
+
+###
+
+### Update an event (Protected - requires JWT token and ownership)
+PUT http://localhost:8080/events/1
+Content-Type: application/json
+Authorization: YOUR_JWT_TOKEN_HERE
+
+{
+  "name": "Go Conference 2024 - Updated",
+  "description": "Annual Go programming conference with new speakers",
+  "location": "San Francisco, CA",
+  "dateTime": "2024-09-15T10:00:00Z"
+}
+
+###
+
+### Delete an event (Protected - requires JWT token and ownership)
+DELETE http://localhost:8080/events/1
+Authorization: YOUR_JWT_TOKEN_HERE
+
+###

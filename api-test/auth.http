@@ -1,0 +1,23 @@
+### Authentication Endpoints
+
+### Register a new user
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+###
+
+### Login
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### Note: Copy the token from the login response and use it in the Authorization header below
