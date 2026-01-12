@@ -2,14 +2,17 @@ package routes
 
 import (
 	"net/http"
-	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/helio-pt/go-booking-rest-api/models"
 )
 
 func getEvents(context *gin.Context) {
-	events := models.GetAllEvents()
+	events, err := models.GetAllEvents()
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{"message": "Could not fetch events."})
+		return
+	}
 	context.JSON(http.StatusOK, events)
 }
 
@@ -22,10 +25,14 @@ func createEvent(context *gin.Context) {
 		return
 	}
 
-	event.ID = time.Now().Unix()
-	event.UserID = 1 // Hardcoded for Phase 1
+	event.UserID = 1 // Hardcoded for now, will be replaced with JWT user ID
 
-	event.Save()
+	err = event.Save()
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{"message": "Could not save event."})
+		return
+	}
+
 	context.JSON(http.StatusCreated, gin.H{"message": "Event created!", "event": event})
 }
 
