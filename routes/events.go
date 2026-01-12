@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/helio-pt/go-booking-rest-api/models"
+	"github.com/helioLJ/go-booking-rest-api/models"
 )
 
 func getEvents(context *gin.Context) {

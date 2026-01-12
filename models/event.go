@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	"github.com/helio-pt/go-booking-rest-api/db"
+	"github.com/helioLJ/go-booking-rest-api/db"
 )
 
 type Event struct {
