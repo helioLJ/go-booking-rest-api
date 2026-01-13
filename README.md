@@ -176,6 +176,37 @@ This project was built in 6 phases:
 5. **Phase 5**: Route protection and authorization
 6. **Phase 6**: Event registrations
 
+## Testing
+
+The project includes comprehensive unit and integration tests covering:
+
+- Password hashing and verification (utils/hash_test.go)
+- JWT token generation and verification (utils/jwt_test.go)
+- API endpoint integration tests (routes/routes_test.go)
+
+### Running Tests
+
+Run all tests:
+```bash
+go test ./...
+```
+
+Run tests with coverage:
+```bash
+go test ./... -cover
+```
+
+Run tests with verbose output:
+```bash
+go test ./... -v
+```
+
+### Test Coverage
+
+- **Utils Package**: 85.7% coverage (password hashing & JWT)
+- **Routes Package**: 23.3% coverage (API endpoints)
+- **Total Tests**: 14 tests covering critical functionality
+
 ## Security
 
 - Passwords are hashed using bcrypt with a cost of 14
